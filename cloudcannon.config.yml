@@ -59,3 +59,9 @@ data_config:
     path: src/data/work.ts
   studies:
     path: src/data/studies.ts
+  homepage:
+    path: src/data/homepage.ts
+  header:
+    path: src/data/homepage.ts
+  footer:
+    path: src/data/homepage.ts
