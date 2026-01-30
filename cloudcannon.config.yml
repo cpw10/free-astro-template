@@ -4,13 +4,23 @@
 # Collections define the content types in your site
 collections_config:
   pages:
-    path: src/pages
+    path: src/content/pages
     name: Pages
-    icon: description
+    icon: wysiwyg
+    url: /[slug]/
+    _enabled_editors:
+      - visual
+    schemas:
+      default:
+        path: src/content/pages/index.md
+  blog:
+    path: src/content/blog
+    name: Blog Posts
+    icon: newspaper
+    url: /blog/[slug]/
     _enabled_editors:
       - visual
       - content
-      - data
   data:
     path: src/data
     name: Site Data

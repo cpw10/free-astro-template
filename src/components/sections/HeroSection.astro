@@ -25,20 +25,26 @@ const {
 <section class="w-full py-6 md:py-10">
   <div class="mx-auto max-w-5xl px-4 text-center">
     <h1 class="text-4xl md:text-6xl font-extrabold tracking-tight text-foreground">
-      <span class="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent" data-editable="text" data-prop="title">{title}</span>
+      <span class="bg-gradient-to-r from-[var(--accent)] to-[var(--accent-dark)] bg-clip-text text-transparent">
+        <editable-text data-editable="text" data-prop="hero_title">{title}</editable-text>
+      </span>
     </h1>
     {subtitle && (
-      <p class="mt-4 text-lg md:text-xl text-[color:var(--color-text-secondary)] max-w-2xl mx-auto" data-editable="text" data-prop="subtitle">
-        {subtitle}
+      <p class="mt-4 text-lg md:text-xl text-[color:var(--color-text-secondary)] max-w-2xl mx-auto">
+        <editable-text data-editable="text" data-prop="hero_subtitle">{subtitle}</editable-text>
       </p>
     )}
     {showCTA && (primaryCTA || secondaryCTA) && (
       <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3">
         {primaryCTA && (
-          <Button href={primaryCTA.href} variant="primary" size="md"><span data-editable="text" data-prop="primaryCTA.text">{primaryCTA.text}</span></Button>
+          <Button href={primaryCTA.href} variant="primary" size="md">
+            <editable-text data-editable="text" data-prop="primaryCTA.text">{primaryCTA.text}</editable-text>
+          </Button>
         )}
         {secondaryCTA && (
-          <Button href={secondaryCTA.href} variant="secondary" size="md"><span data-editable="text" data-prop="secondaryCTA.text">{secondaryCTA.text}</span></Button>
+          <Button href={secondaryCTA.href} variant="secondary" size="md">
+            <editable-text data-editable="text" data-prop="secondaryCTA.text">{secondaryCTA.text}</editable-text>
+          </Button>
         )}
       </div>
     )}
