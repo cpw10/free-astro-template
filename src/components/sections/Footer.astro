@@ -37,21 +37,15 @@ const inoreaderUrl = `https://www.inoreader.com/?add_feed=${feedUrl}`;
 ---
 
 <footer id="contact" class="py-12 px-4 text-center">
-  <h2 class="text-2xl md:text-3xl font-semibold text-foreground">
-    <editable-text data-editable="text" data-prop="footer.heading">{heading}</editable-text>
-  </h2>
-  <p class="mt-2 text-[color:var(--color-text-muted)]">
-    <editable-text data-editable="text" data-prop="footer.subheading">{subheading}</editable-text>
-  </p>
+  <h2 class="text-2xl md:text-3xl font-semibold text-foreground" data-cms-edit="footer.heading">{heading}</h2>
+  <p class="mt-2 text-[color:var(--color-text-muted)]" data-cms-edit="footer.subheading">{subheading}</p>
   <div class="mt-6 flex justify-center">
     <Button href="https://www.linkedin.com/in/guihubie/" variant="secondary" size="md" >
       <span class="inline-flex" aria-hidden="true" set:html={contactIcon} />
-      <editable-text data-editable="text" data-prop="footer.buttonText">{buttonText}</editable-text>
+      <span data-cms-edit="footer.buttonText">{buttonText}</span>
     </Button>
   </div>
-  <div class="mt-6 text-sm text-[color:var(--color-text-muted)]">Made by: <a href="https://guihubie.com" class="hover:text-[color:var(--accent)]">
-    <editable-text data-editable="text" data-prop="footer.authorName">{authorName}</editable-text>
-  </a>.</div>
+  <div class="mt-6 text-sm text-[color:var(--color-text-muted)]">Made by: <a href="https://guihubie.com" class="hover:text-[color:var(--accent)]" data-cms-edit="footer.authorName">{authorName}</a>.</div>
   <div class="mt-6 flex items-center justify-center gap-4 text-sm">
     <a class="sw-btn-sm" href={feedlyUrl} target="_blank" rel="noopener noreferrer" aria-label="Subscribe in Feedly">Feedly</a>
     <a class="sw-btn-sm" href={inoreaderUrl} target="_blank" rel="noopener noreferrer" aria-label="Subscribe in Inoreader">Inoreader</a>

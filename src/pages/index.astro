@@ -1,5 +1,4 @@
 ---
-import { getEntry } from 'astro:content';
 import BaseHead from '../components/BaseHead.astro';
 import Footer from '../components/sections/Footer.astro';
 import Header from '../components/sections/Header.astro';
@@ -13,21 +12,10 @@ import Studies from '../components/sections/Studies.astro';
 import { studies } from '../data/studies';
 import ArrowSeparator from '../components/ui/separator/ArrowSeparator.astro'
 import GlowLineSeparator from '../components/ui/separator/GlowLineSeparator.astro'
+import { homepage, header, footer } from '../data/homepage';
 
-// Get page content from content collection
-const page = await getEntry('pages', 'index');
-if (!page) {
-  throw new Error('Page not found');
-}
-
-const {
-  hero_title,
-  hero_subtitle,
-  primaryCTA,
-  secondaryCTA,
-  header,
-  footer
-} = page.data;
+// Get page content from data file
+const { title: hero_title, subtitle: hero_subtitle, primaryCTA, secondaryCTA } = homepage;
 ---
 
 <!doctype html>
