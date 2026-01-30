@@ -17,15 +17,15 @@ const { items, title } = Astro.props as Props;
 <section class="w-full py-8">
   <div class="mx-auto max-w-6xl px-4">
     {title && (
-      <h2 class="text-3xl md:text-4xl font-semibold text-center mb-6 text-foreground">{title}</h2>
+      <h2 class="text-3xl md:text-4xl font-semibold text-center mb-6 text-foreground" data-editable="text" data-prop="title">{title}</h2>
     )}
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-      {items.map((study) => (
+      {items.map((study, index) => (
         <article class="card-surface p-6">
-          <h3 class="text-xl font-semibold text-foreground">{study.title}</h3>
-          <div class="mt-1 text-sm text-[color:var(--color-text-secondary)]">{study.institution}</div>
-          <p class="mt-3 text-[color:var(--color-text-secondary)]">{study.description}</p>
+          <h3 class="text-xl font-semibold text-foreground" data-editable="text" data-prop={`items[${index}].title`}>{study.title}</h3>
+          <div class="mt-1 text-sm text-[color:var(--color-text-secondary)]" data-editable="text" data-prop={`items[${index}].institution`}>{study.institution}</div>
+          <p class="mt-3 text-[color:var(--color-text-secondary)]" data-editable="text" data-prop={`items[${index}].description`}>{study.description}</p>
           {study.tags && study.tags.length > 0 && (
             <div class="mt-4 flex flex-wrap gap-2">
               {study.tags.map((tag) => (

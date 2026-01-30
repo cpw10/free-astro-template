@@ -1,0 +1,61 @@
+# CloudCannon configuration for Astro template
+# https://cloudcannon.com/documentation/
+
+# Collections define the content types in your site
+collections_config:
+  pages:
+    path: src/pages
+    name: Pages
+    icon: description
+    _enabled_editors:
+      - visual
+      - content
+      - data
+  data:
+    path: src/data
+    name: Site Data
+    icon: data_object
+    disable_add: false
+    disable_add_folder: true
+
+# Paths configuration
+paths:
+  dam_uploads: public/images
+  dam_static: public
+  uploads: public/images
+
+# Editor configuration
+_editables:
+  text:
+    bold: true
+    italic: true
+    link: true
+    format: p h1 h2 h3 h4
+    undo: true
+    redo: true
+  content:
+    bold: true
+    italic: true
+    underline: true
+    strike: true
+    subscript: true
+    superscript: true
+    link: true
+    format: p h1 h2 h3 h4 h5 h6
+    blockquote: true
+    code: true
+    bulletedlist: true
+    numberedlist: true
+    table: true
+    image: true
+    undo: true
+    redo: true
+
+# Data configuration for visual editing
+data_config:
+  skills:
+    path: src/data/skills.ts
+  work:
+    path: src/data/work.ts
+  studies:
+    path: src/data/studies.ts
